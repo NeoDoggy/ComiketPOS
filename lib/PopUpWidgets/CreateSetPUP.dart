@@ -251,9 +251,9 @@ class _MyStatefulWidgetState extends State<CreateSetCard>
                                   }
                                   Provider.of<MainAppState>(context, listen: false).setSetCard(MainAppState.getNowSetId(), _nameContr.text, int.parse(_priceContr.text), int.parse(_quantContr.text), _urlContr.text.isNotEmpty?_urlContr.text:"", globals.ItemBricks);
                                   Navigator.of(context).pop();
-                                  if(!MainAppState.getSetWrapInit()) {
+                                  if(MainAppState.sellSetBox.length==1) {
                                     context.pushReplacement('/makeSet');
-                                    await MainAppState.setWrapInit();
+                                    // await MainAppState.setWrapInit();
                                   }
                                 }
                               }

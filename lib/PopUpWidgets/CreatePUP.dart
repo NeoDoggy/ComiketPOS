@@ -147,9 +147,9 @@ class _MyStatefulWidgetState extends State<CreateCard>
                                 // globals.AllC.insert(globals.AllC.length,ItemCard(id: globals.AllC.length,name: _nameContr.text, price: int.parse(_priceContr.text), quantity: int.parse(_quantContr.text), image_uri: _urlContr.text.isNotEmpty?_urlContr.text:null,));
                                 Provider.of<MainAppState>(context, listen: false).setCard(MainAppState.getNowId(), _nameContr.text, int.parse(_priceContr.text), int.parse(_quantContr.text), _urlContr.text.isNotEmpty?_urlContr.text:"",);
                                 Navigator.of(context).pop();
-                                if(!MainAppState.getWrapInit()) {
+                                if(MainAppState.sellItemBox.length==1) {
                                   context.pushReplacement('/set');
-                                  await MainAppState.wrapInit();
+                                  // await MainAppState.wrapInit();
                                 }
                               }
                             },
